@@ -135,8 +135,7 @@ function handler() {
 // Get the current page orientation. This method is exposed publicly, should it
 // be needed, as jQuery.event.special.orientationchange.orientation()
 special_event.orientation = get_orientation = function() {
-	var elem = doc.documentElement;
-	return elem && elem.clientWidth / elem.clientHeight < 1.1 ? "portrait" : "landscape";
+	return window.innerWidth < window.innerHeight ? "profile" : "landscape";
 };
 	
 
